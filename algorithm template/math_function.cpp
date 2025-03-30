@@ -59,3 +59,21 @@ int find_smallest_non_negative(vector<int> &a) {
   }
   return smallest;
 }
+
+int find_smallest_non_negative_optim(vector<int> &a) {
+  int n = a.size();
+  // 标记存在的非负整数（原地修改符号位）
+  for (int i = 0; i < n; i++) {
+    int num = a[i];
+    if (num >= 0 && num < n) {
+      a[num] = -abs(a[num]); // 用负号标记存在的数
+    }
+  }
+  // 查找第一个未被标记的位置
+  for (int i = 0; i < n; i++) {
+    if (a[i] >= 0) {
+      return i;
+    }
+  }
+  return n;
+}
