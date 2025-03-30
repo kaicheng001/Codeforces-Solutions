@@ -124,6 +124,7 @@ ll solve() {
   for (const auto &[mask, count] : mask_count) {
     // Pairs with the same mask
     cnt += count * (count - 1) / 2;
+    // 统计相同掩码的对数（组合数 C(cnt, 2)）。
 
     // Pairs with masks differing by exactly one bit
     for (int i = 0; i < 26; ++i) {
@@ -131,6 +132,8 @@ ll solve() {
       //         比如(mask1, mask2) 和(mask2, mask1)是同一对，只需统计一次。强制 neighbor_mask >mask 确保只算前者。
            ll neighbor_mask = mask ^ (1 << i);
       if (neighbor_mask > mask && mask_count.count(neighbor_mask)) {
+        //枚举 26 种可能的邻居掩码
+
         // 统计与当前掩码相差一位的掩码的对数
         // 只需统计 neighbor_mask > mask 的情况，避免重复统计。
         cnt += count * mask_count[neighbor_mask];
