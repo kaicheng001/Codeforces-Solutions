@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "clang++ build and debug active file",
+      "type": "lldb",
+      "request": "launch",
+      //fileBasenameNoExtension表示当前打开的文件的文件名，但不包括文件扩展名
+      //例如，如果当前打开的文件是 example.cpp，那么 fileBasenameNoExtension 的值将是 example
+      "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
+      "args": [],
+      //cwd用于指定当前工作目录
+      //如果当前打开的是一个文件夹，${workspaceFolder} 就是这个文件夹的路径
+      "cwd": "${workspaceFolder}",
+      "preLaunchTask": "clang++ build" //这个名字需要和tasks.json的label名一致
+    }
+  ]
+}

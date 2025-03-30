@@ -1,0 +1,1 @@
+{"name":"Local: 2074","url":"d:\\桌面\\Codeforces-Solutions\\practice\\2074.c.cpp","tests":[{"id":1743251809920,"input":"7\n5\n2\n6\n3\n69\n4\n420\n","output":"3\n-1\n5\n-1\n66\n-1\n320\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\桌面\\Codeforces-Solutions\\practice\\2074.c.cpp","group":"local","local":true}

@@ -1,0 +1,26 @@
+{
+  "clangd.path": "D:\\MSYS2\\ucrt64\\bin\\clangd.exe",
+  "clangd.arguments": [
+    "--header-insertion=never",
+    "--query-driver=D:\\MSYS2\\ucrt64\\bin\\clang++.exe"
+  ],
+  "clangd.fallbackFlags": ["-std=c++14"],
+
+  "code-runner.executorMap": {
+    "cpp": "cd $dir && clang++ -std=c++14 -w \"$fileName\" -o temp_exec.exe && .\\temp_exec.exe && del temp_exec.exe",
+    "c": "cd $dir && clang -w \"$fileName\" -o temp_exec.exe && .\\temp_exec.exe && del temp_exec.exe",
+    "python": "python -u"
+  },
+  "code-runner.saveFileBeforeRun": true,
+  "code-runner.clearPreviousOutput": true,
+  "code-runner.ignoreSelection": true,
+  "code-runner.runInTerminal": true,
+  "code-runner.preserveFocus": false,
+
+  "editor.fontSize": 15,
+  "terminal.integrated.fontSize": 14,
+  "editor.formatOnSave": true,
+  "files.associations": {
+    "unordered_set": "cpp"
+  }
+}

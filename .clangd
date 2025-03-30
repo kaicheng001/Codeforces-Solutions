@@ -1,0 +1,16 @@
+CompileFlags:
+  Add: [-Wno-unused, -Wno-unused-includes, -Wno-everything]
+  
+Diagnostics:
+  Suppress: 
+    - unused-includes
+    - unknown-warning-option
+  UnusedIncludes: None
+  ClangTidy:
+    Add: []
+    # Remove: [unused-includes, clang-diagnostic-unused-includes]
+    CheckOptions:
+      readability-braces-around-statements.ShortStatementLines: 2
+
+Index:
+  Background: Build
