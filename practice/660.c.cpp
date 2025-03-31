@@ -1,69 +1,64 @@
+// date: 2025-03-31
+// author: kaicheng
+// URL: https://codeforces.com/problemset/problem/660/C
+/*
+      滑动窗口：
+      int left = 0, right = 0;
+      int zero_count = 0;
+      int max_len = 0;
+      int left_position = 0;
+*/
+
 #include <bits/stdc++.h>
 
 using namespace std;
 
-void slove() {
-  int n, m;
-  cin >> n >> m;
+using ll = long long;
+using ld = long double;
+
+void solve() {
+  int n, k;
+  cin >> n >> k;
   vector<int> a(n);
   for (int i = 0; i < n; ++i) {
     cin >> a[i];
   }
-  int max_val = 0;
-  int slide_sum = 0;
-  if(m==n){
-    for(int i=0;i<n;i++){
-      if(a[i]==0){
-        a[i]=1;
+  int left = 0, right = 0;
+  int zero_count = 0;
+  int max_len = 0;
+  int left_position = 0;
+  for(right = 0;right<n;right++){
+    if(a[right]==0){
+      zero_count++;
+    }
+    while(zero_count>k){
+      if(a[left]==0){
+        zero_count--;
       }
+      left++;
     }
-    cout<<accumulate(a.begin(),a.end(),0)<<endl;
-    for(int i=0;i<n;i++){
-      cout<<a[i]<<" ";
+    if(right-left+1>max_len){
+      max_len=right-left+1;
+      left_position=left;
     }
-    return;
+    // left_position 只在找到 更长的窗口 时更新，而不是每次 left 移动时更新。
+    // left_position 仅仅记录历史上最长的窗口的左边界。
+    // 也就是在窗口内的 0 的个数不超过 k 同时滑动窗口最长时，更新 max_len 和 left_position。
   }
-  int left = 0, right = m - 1;
-  int left_curr = 0, right_curr = 0;
-  for (int i = 0; i < n; i++) {
-    int slide_sum = accumulate(a.begin() + left, a.begin() + right + 1, 0);
-    while (right < n) {
-      if ((slide_sum + m) == (right - left + 1)) {
-        max_val = max(max_val, slide_sum);
-        left_curr = left;
-        right_curr = right;
-        slide_sum += a[right];
-        right++;
-        break;
-      } else if ((slide_sum + m) < (right - left + 1)) {
-        slide_sum -= a[left];
-        left++;
-      } else if ((slide_sum + m) > (right - left + 1)) {
-        slide_sum += a[right];
-        right++;
-        break;
-      }
-    }
+  for(int i=left_position;i<left_position+max_len;i++){
+    a[i]=1;
   }
-  int change_count = 0;
-  for (int i = left_curr; i < right_curr; i++) {
-    if (a[i] == 0) {
-      a[i] = 1;
-      change_count++;
-    }
+  cout<<max_len<<endl;
+  for(auto i:a){
+    cout<<i<<" ";
   }
-  cout << max_val + change_count << endl;
 
-  for (int i = 0; i < n; i++) {
-    cout << a[i] << " ";
-  }
 }
 
-int main() {
+signed main() {
   ios_base::sync_with_stdio(false);
   cin.tie(nullptr);
   cout.tie(nullptr);
-
-  slove();
+  solve();
   return 0;
 }
