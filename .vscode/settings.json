@@ -21,6 +21,15 @@
   "terminal.integrated.fontSize": 14,
   "editor.formatOnSave": true,
   "files.associations": {
-    "unordered_set": "cpp"
+    "unordered_set": "cpp",
+    "iostream": "cpp",
+    "array": "cpp",
+    "deque": "cpp",
+    "list": "cpp",
+    "string": "cpp",
+    "vector": "cpp",
+    "string_view": "cpp",
+    "span": "cpp",
+    "stacktrace": "cpp"
   }
 }
