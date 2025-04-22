@@ -1,0 +1,1 @@
+{"name":"Local: 813","url":"d:\\桌面\\Codeforces-Solutions\\practice\\813.a.cpp","tests":[{"id":1745332548299,"input":"4 3\n1 2\n2 3\n2 4\n","output":"4\n"},{"id":1745332554165,"input":"5 2\n1 2\n2 3\n3 4\n2 5\n","output":"6\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\桌面\\Codeforces-Solutions\\practice\\813.a.cpp","group":"local","local":true}
