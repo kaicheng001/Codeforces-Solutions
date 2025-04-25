@@ -1,0 +1,1 @@
+{"name":"Local: a","url":"d:\\桌面\\Codeforces-Solutions\\Div\\Round 1020 Div. 3\\a.cpp","tests":[{"id":1745505459436,"input":"5\n3\n101\n1\n1\n5\n00000\n2\n11\n3\n010\n","output":"5\n0\n5\n2\n4\n"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\桌面\\Codeforces-Solutions\\Div\\Round 1020 Div. 3\\a.cpp","group":"local","local":true}
